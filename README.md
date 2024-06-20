@@ -27,9 +27,9 @@ Instala todas las dependencias necesarias utilizando npm:
 ```bash
 npm install
 ```
-Configuración de la Base de Datos
+##  Configuración de la Base de Datos
 Crear la Base de Datos
-Asegúrate de que PostgreSQL esté en ejecución y crea la base de datos para la aplicación:
+PostgreSQL debe estar en ejecución y crea la base de datos para la aplicación:
 
 Conéctate a PostgreSQL:
 ```bash
@@ -40,3 +40,47 @@ Crea la base de datos:
 ```bash
 CREATE DATABASE inventarioBD;
 ```
+
+Configurar las Variables de Entorno
+Crea un archivo .env en la raíz del proyecto y configura las variables de entorno necesarias.
+
+Edita el archivo .env y añade las siguientes configuraciones:
+
+```bash
+DB_NAME=inventarioBD
+DB_USER=postgres
+DB_PASS=root
+DB_HOST=127.0.0.1
+DB_DIALECT=postgres
+DB_PORT=5432
+JWT_SECRET=jwt
+PORT=3000
+```
+## Iniciar la Aplicación
+Inicia la aplicación utilizando el siguiente comando:
+```bash
+npm start
+```
+La aplicación estará disponible en http://localhost:3000.
+
+## Generar y Servir la Documentación APIDoc
+Generar la Documentación
+Luego, genera la documentación utilizando el siguiente comando:
+```bash
+apidoc -i src/ -o apidoc/
+```
+
+Servir la Documentación
+Puedes servir la documentación generada utilizando un servidor estático como http-server. Primero, instala http-server si no lo tienes:
+
+```bash
+npm install -g http-server
+```
+
+Luego, sirve la documentación:
+
+```bash
+http-server apidoc/
+```
+
+La documentación estará disponible en http://localhost:8080
