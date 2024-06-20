@@ -19,6 +19,6 @@ Primero, clona el repositorio del proyecto desde GitHub:
 ```bash
 git clone <URL_DEL_REPOSITORIO>
 cd <NOMBRE_DEL_PROYECTO>
-
+```bash
 ##  Instalación de Dependencias
 Instala todas las dependencias necesarias utilizando npm:
